@@ -11,6 +11,7 @@
 		E28FC96A28E9999800628167 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28FC96928E9999800628167 /* ContentView.swift */; };
 		E28FC96C28E9999A00628167 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E28FC96B28E9999A00628167 /* Assets.xcassets */; };
 		E28FC96F28E9999A00628167 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E28FC96E28E9999A00628167 /* Preview Assets.xcassets */; };
+		E28FC97728E99B3400628167 /* CoreDataTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E28FC97528E99B3400628167 /* CoreDataTest.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		E28FC96928E9999800628167 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E28FC96B28E9999A00628167 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E28FC96E28E9999A00628167 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E28FC97628E99B3400628167 /* CoreDataTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataTest.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				E28FC96728E9999800628167 /* CoreDataTestApp.swift */,
 				E28FC96928E9999800628167 /* ContentView.swift */,
+				E28FC97528E99B3400628167 /* CoreDataTest.xcdatamodeld */,
 				E28FC96B28E9999A00628167 /* Assets.xcassets */,
 				E28FC96D28E9999A00628167 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E28FC96A28E9999800628167 /* ContentView.swift in Sources */,
+				E28FC97728E99B3400628167 /* CoreDataTest.xcdatamodeld in Sources */,
 				E28FC96828E9999800628167 /* CoreDataTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +279,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +309,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +345,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E28FC97528E99B3400628167 /* CoreDataTest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E28FC97628E99B3400628167 /* CoreDataTest.xcdatamodel */,
+			);
+			currentVersion = E28FC97628E99B3400628167 /* CoreDataTest.xcdatamodel */;
+			path = CoreDataTest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E28FC95C28E9999800628167 /* Project object */;
 }
