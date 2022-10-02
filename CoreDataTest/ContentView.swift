@@ -7,37 +7,43 @@
 
 import CoreData
 import SwiftUI
+import WidgetKit
 
 
-final class DataController: ObservableObject {
-    let container = NSPersistentContainer(name: "CoreDataTest")
-    
-    init() {
-        container.loadPersistentStores { description, error in
-            if let error {
-                print(error)
-            } else {
-                print(description)
-            }
-        }
-    }
-}
 struct ContentView: View {
-    @FetchRequest(sortDescriptors: []) var people: FetchedResults<Person>
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.dateOfBirth, order: .reverse)]) var people: FetchedResults<Person>
     let names = ["Harry", "John", "Emily", "Ben"]
     @Environment(\.managedObjectContext) var managedObjectContext
     var body: some View {
         VStack {
             List(people) { person in
-                Text(person.name ?? "No person")
+                HStack {
+                    Text(person.name ?? "No person")
+                    Spacer()
+                    Text(person.dateOfBirth ?? Date(), format: .dateTime)
+                }
             }
             
             Button("Add person") {
                 let person = Person(context: managedObjectContext)
                 person.id = UUID()
                 person.name = names.randomElement()!
+                person.dateOfBirth = Date()
                 try? managedObjectContext.save()
+                WidgetCenter.shared.reloadAllTimelines()
             }
+            .buttonStyle(.borderedProminent)
+            .padding()
+            Button("Clear", role: .destructive) {
+                if !people.isEmpty {
+                    managedObjectContext.delete(people[0])
+                }
+                try? managedObjectContext.save()
+                WidgetCenter.shared.reloadAllTimelines()
+            }
+            .buttonStyle(.borderedProminent)
+            
+            .padding()
         }
         .padding()
     }
