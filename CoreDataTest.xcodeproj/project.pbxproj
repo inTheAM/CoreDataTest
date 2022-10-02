@@ -12,7 +12,39 @@
 		E28FC96C28E9999A00628167 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E28FC96B28E9999A00628167 /* Assets.xcassets */; };
 		E28FC96F28E9999A00628167 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E28FC96E28E9999A00628167 /* Preview Assets.xcassets */; };
 		E28FC97728E99B3400628167 /* CoreDataTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E28FC97528E99B3400628167 /* CoreDataTest.xcdatamodeld */; };
+		E28FC99728E9B52C00628167 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28FC97E28E9A12900628167 /* WidgetKit.framework */; };
+		E28FC99828E9B52C00628167 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28FC98028E9A12900628167 /* SwiftUI.framework */; };
+		E28FC99B28E9B52C00628167 /* CoreDataTestWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28FC99A28E9B52C00628167 /* CoreDataTestWidget.swift */; };
+		E28FC99D28E9B52E00628167 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E28FC99C28E9B52E00628167 /* Assets.xcassets */; };
+		E28FC9A128E9B52E00628167 /* CoreDataTestWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E28FC99628E9B52C00628167 /* CoreDataTestWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E28FC9A628E9B5B400628167 /* CoreDataTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E28FC97528E99B3400628167 /* CoreDataTest.xcdatamodeld */; };
+		E28FC9AA28E9B8DD00628167 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28FC9A928E9B8DD00628167 /* DataController.swift */; };
+		E28FC9AB28E9B91700628167 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28FC9A928E9B8DD00628167 /* DataController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E28FC99F28E9B52E00628167 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E28FC95C28E9999800628167 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E28FC99528E9B52C00628167;
+			remoteInfo = CoreDataTestWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E28FC98E28E9A12C00628167 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E28FC9A128E9B52E00628167 /* CoreDataTestWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E28FC96428E9999800628167 /* CoreDataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -21,6 +53,15 @@
 		E28FC96B28E9999A00628167 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E28FC96E28E9999A00628167 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E28FC97628E99B3400628167 /* CoreDataTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataTest.xcdatamodel; sourceTree = "<group>"; };
+		E28FC97E28E9A12900628167 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		E28FC98028E9A12900628167 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		E28FC99628E9B52C00628167 /* CoreDataTestWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CoreDataTestWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E28FC99A28E9B52C00628167 /* CoreDataTestWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestWidget.swift; sourceTree = "<group>"; };
+		E28FC99C28E9B52E00628167 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E28FC99E28E9B52E00628167 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E28FC9A728E9B67F00628167 /* CoreDataTestWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoreDataTestWidgetExtension.entitlements; sourceTree = "<group>"; };
+		E28FC9A828E9B6C100628167 /* CoreDataTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoreDataTest.entitlements; sourceTree = "<group>"; };
+		E28FC9A928E9B8DD00628167 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,13 +72,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E28FC99328E9B52C00628167 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E28FC99828E9B52C00628167 /* SwiftUI.framework in Frameworks */,
+				E28FC99728E9B52C00628167 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		E28FC95B28E9999800628167 = {
 			isa = PBXGroup;
 			children = (
+				E28FC9A728E9B67F00628167 /* CoreDataTestWidgetExtension.entitlements */,
+				E28FC9A528E9B5A100628167 /* Shared */,
 				E28FC96628E9999800628167 /* CoreDataTest */,
+				E28FC99928E9B52C00628167 /* CoreDataTestWidget */,
+				E28FC97D28E9A12900628167 /* Frameworks */,
 				E28FC96528E9999800628167 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				E28FC96428E9999800628167 /* CoreDataTest.app */,
+				E28FC99628E9B52C00628167 /* CoreDataTestWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,9 +108,9 @@
 		E28FC96628E9999800628167 /* CoreDataTest */ = {
 			isa = PBXGroup;
 			children = (
+				E28FC9A828E9B6C100628167 /* CoreDataTest.entitlements */,
 				E28FC96728E9999800628167 /* CoreDataTestApp.swift */,
 				E28FC96928E9999800628167 /* ContentView.swift */,
-				E28FC97528E99B3400628167 /* CoreDataTest.xcdatamodeld */,
 				E28FC96B28E9999A00628167 /* Assets.xcassets */,
 				E28FC96D28E9999A00628167 /* Preview Content */,
 			);
@@ -70,6 +125,34 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		E28FC97D28E9A12900628167 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E28FC97E28E9A12900628167 /* WidgetKit.framework */,
+				E28FC98028E9A12900628167 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E28FC99928E9B52C00628167 /* CoreDataTestWidget */ = {
+			isa = PBXGroup;
+			children = (
+				E28FC99A28E9B52C00628167 /* CoreDataTestWidget.swift */,
+				E28FC99C28E9B52E00628167 /* Assets.xcassets */,
+				E28FC99E28E9B52E00628167 /* Info.plist */,
+			);
+			path = CoreDataTestWidget;
+			sourceTree = "<group>";
+		};
+		E28FC9A528E9B5A100628167 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E28FC97528E99B3400628167 /* CoreDataTest.xcdatamodeld */,
+				E28FC9A928E9B8DD00628167 /* DataController.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,15 +163,34 @@
 				E28FC96028E9999800628167 /* Sources */,
 				E28FC96128E9999800628167 /* Frameworks */,
 				E28FC96228E9999800628167 /* Resources */,
+				E28FC98E28E9A12C00628167 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E28FC9A028E9B52E00628167 /* PBXTargetDependency */,
 			);
 			name = CoreDataTest;
 			productName = CoreDataTest;
 			productReference = E28FC96428E9999800628167 /* CoreDataTest.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E28FC99528E9B52C00628167 /* CoreDataTestWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E28FC9A228E9B52E00628167 /* Build configuration list for PBXNativeTarget "CoreDataTestWidgetExtension" */;
+			buildPhases = (
+				E28FC99228E9B52C00628167 /* Sources */,
+				E28FC99328E9B52C00628167 /* Frameworks */,
+				E28FC99428E9B52C00628167 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoreDataTestWidgetExtension;
+			productName = CoreDataTestWidgetExtension;
+			productReference = E28FC99628E9B52C00628167 /* CoreDataTestWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -101,6 +203,9 @@
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					E28FC96328E9999800628167 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					E28FC99528E9B52C00628167 = {
 						CreatedOnToolsVersion = 14.0;
 					};
 				};
@@ -119,6 +224,7 @@
 			projectRoot = "";
 			targets = (
 				E28FC96328E9999800628167 /* CoreDataTest */,
+				E28FC99528E9B52C00628167 /* CoreDataTestWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -133,6 +239,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E28FC99428E9B52C00628167 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E28FC99D28E9B52E00628167 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -141,12 +255,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				E28FC96A28E9999800628167 /* ContentView.swift in Sources */,
+				E28FC9AA28E9B8DD00628167 /* DataController.swift in Sources */,
 				E28FC97728E99B3400628167 /* CoreDataTest.xcdatamodeld in Sources */,
 				E28FC96828E9999800628167 /* CoreDataTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E28FC99228E9B52C00628167 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E28FC9A628E9B5B400628167 /* CoreDataTest.xcdatamodeld in Sources */,
+				E28FC9AB28E9B91700628167 /* DataController.swift in Sources */,
+				E28FC99B28E9B52C00628167 /* CoreDataTestWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E28FC9A028E9B52E00628167 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E28FC99528E9B52C00628167 /* CoreDataTestWidgetExtension */;
+			targetProxy = E28FC99F28E9B52E00628167 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E28FC97028E9999A00628167 /* Debug */ = {
@@ -266,8 +399,10 @@
 		E28FC97328E9999A00628167 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CoreDataTest/CoreDataTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CoreDataTest/Preview Content\"";
@@ -296,8 +431,10 @@
 		E28FC97428E9999A00628167 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CoreDataTest/CoreDataTest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CoreDataTest/Preview Content\"";
@@ -323,6 +460,62 @@
 			};
 			name = Release;
 		};
+		E28FC9A328E9B52E00628167 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CoreDataTestWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TW4MPRU9AN;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoreDataTestWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CoreDataTestWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mgua.coredatatest.CoreDataTest.CoreDataTestWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E28FC9A428E9B52E00628167 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = CoreDataTestWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = TW4MPRU9AN;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CoreDataTestWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CoreDataTestWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mgua.coredatatest.CoreDataTest.CoreDataTestWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -340,6 +533,15 @@
 			buildConfigurations = (
 				E28FC97328E9999A00628167 /* Debug */,
 				E28FC97428E9999A00628167 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E28FC9A228E9B52E00628167 /* Build configuration list for PBXNativeTarget "CoreDataTestWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E28FC9A328E9B52E00628167 /* Debug */,
+				E28FC9A428E9B52E00628167 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
