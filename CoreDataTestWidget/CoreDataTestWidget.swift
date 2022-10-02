@@ -8,29 +8,57 @@ import CoreData
 import WidgetKit
 import SwiftUI
 
-let container = DataController().container
-
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+    
+    // Add ManagedObjectContext to Provider and initialize
+    let managedObjectContext: NSManagedObjectContext
+    
+    init(context: NSManagedObjectContext) {
+        self.managedObjectContext = context
     }
-
+    
+    func placeholder(in context: Context) -> SimpleEntry {
+        let person = Person(context: managedObjectContext)
+        person.name = "Test person"
+        return SimpleEntry(date: Date(), person: person)
+    }
+    
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
+        let person = Person(context: managedObjectContext)
+        person.name = "Test person"
+        let entry = SimpleEntry(date: Date(), person: person)
         completion(entry)
     }
-
+    
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
-
+        var people = [Person]()
+        
+        // Create NSFetchRequest and sort
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+        request.sortDescriptors = [NSSortDescriptor(key: "dateOfBirth", ascending: false)]
+        
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
+            
+            // In case fetching fails, display test person
+            let testPerson = Person(context: managedObjectContext)
+            testPerson.name = "Test person"
+            
+            // Fetch the people from CoreData
+            do {
+                people = try managedObjectContext.fetch(request) as? [Person] ?? []
+            } catch {
+                print(error)
+            }
+            
+            // Assign to TimelineEntry
+            let entry = SimpleEntry(date: entryDate, person: people.first ?? testPerson)
             entries.append(entry)
         }
-
+        
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
@@ -38,27 +66,31 @@ struct Provider: TimelineProvider {
 
 struct SimpleEntry: TimelineEntry {
     let date: Date
+    
+    // Add person to entry
+    let person: Person
 }
 
 struct CoreDataTestWidgetEntryView : View {
     var entry: Provider.Entry
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.dateOfBirth, order: .reverse)]) var people: FetchedResults<Person>
+    
     var body: some View {
-        if let person = people.first {
-            Text(person.name ?? "No person")
-        } else {
-            Text("No person")
-        }
+        Text(entry.person.name ?? "No person")
     }
 }
 
 @main
 struct CoreDataTestWidget: Widget {
     let kind: String = "CoreDataTestWidget"
+    
+    // Setting the container where data is stored
+    let container = DataController().container
+    
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
+        
+        // Pass container context to Provider
+        StaticConfiguration(kind: kind, provider: Provider(context: container.viewContext)) { entry in
             CoreDataTestWidgetEntryView(entry: entry)
-                .environment(\.managedObjectContext, container.viewContext)
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
@@ -67,7 +99,9 @@ struct CoreDataTestWidget: Widget {
 
 struct CoreDataTestWidget_Previews: PreviewProvider {
     static var previews: some View {
-        CoreDataTestWidgetEntryView(entry: SimpleEntry(date: Date()))
+        let person = Person()
+        person.name = "Test person"
+        return CoreDataTestWidgetEntryView(entry: SimpleEntry(date: Date(), person: person))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
